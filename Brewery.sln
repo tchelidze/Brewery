@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Application", "Brewery.Application\Brewery.Application.csproj", "{B28AF510-272F-4DBC-926B-E1289B8F05A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Application", "src\Brewery.Application\Brewery.Application.csproj", "{B28AF510-272F-4DBC-926B-E1289B8F05A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Domain", "Brewery.Domain\Brewery.Domain.csproj", "{75F46A85-206D-4672-A6EB-139FE9E3B033}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Domain", "src\Brewery.Domain\Brewery.Domain.csproj", "{75F46A85-206D-4672-A6EB-139FE9E3B033}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Spec", "Brewery.Spec\Brewery.Spec.csproj", "{4801E1A3-75FA-49BD-BB02-46DF0621B364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Spec", "src\Brewery.Spec\Brewery.Spec.csproj", "{4801E1A3-75FA-49BD-BB02-46DF0621B364}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.CrossEdge", "Brewery.CrossEdge\Brewery.CrossEdge.csproj", "{7F344562-2535-4328-B25E-64643A4D683A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.CrossEdge", "src\Brewery.CrossEdge\Brewery.CrossEdge.csproj", "{7F344562-2535-4328-B25E-64643A4D683A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Web", "Brewery.Web\Brewery.Web.csproj", "{178FD0B4-5221-4F99-B54F-D1B66C3A48CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brewery.Web", "src\Brewery.Web\Brewery.Web.csproj", "{178FD0B4-5221-4F99-B54F-D1B66C3A48CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
