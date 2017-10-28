@@ -18,11 +18,6 @@ namespace Brewery.Web.Features.Bewery.Controllers
     public partial class BeerController
     {
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
-        public BeerController()
-        {
-        }
-
-        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         protected BeerController(Dummy d)
         {
         }
@@ -105,11 +100,11 @@ namespace Brewery.Web.Features.Bewery.Controllers
         [NonAction]
         partial void IndexOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo);
         [NonAction]
-        public override Microsoft.AspNetCore.Mvc.IActionResult Index()
+        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> Index()
         {
             var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
-            return callInfo;
+            return Task.FromResult(callInfo as Microsoft.AspNetCore.Mvc.IActionResult);
         }
     }
 }

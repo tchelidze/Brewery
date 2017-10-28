@@ -34,4 +34,10 @@
     <Folder Include="Features\Shared\Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Brewery.Application\Brewery.Application.csproj" />
+    <ProjectReference Include="..\Brewery.Domain\Brewery.Domain.csproj" />
+    <ProjectReference Include="..\Brewery.Infrastructure\Brewery.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
