@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.IO;
+﻿using System.IO;
+using Microsoft.Extensions.Configuration;
 
-namespace Beelisaurus.Web.Startup.Factories
+namespace Brewery.Web.Setup.Configuration
 {
     internal static class ConfigurationFactory
     {

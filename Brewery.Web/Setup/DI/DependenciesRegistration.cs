@@ -1,7 +1,7 @@
 ﻿using Autofac;
-using Beelisaurus.Web.Features.Shared.Controllers;
+using Brewery.Web.Features.Shared.Controllers;
 
-namespace Brewery.Setup.DI
+namespace Brewery.Web.Setup.DI
 {
     internal static class DependenciesRegistration
     {

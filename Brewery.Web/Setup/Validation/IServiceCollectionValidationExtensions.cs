@@ -1,9 +1,9 @@
-﻿using Beelisaurus.Web.Features.Shared.Controllers;
+﻿using Brewery.Web.Features.Shared.Controllers;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Brewery.Setup.Validation
+namespace Brewery.Web.Setup.Validation
 {
     internal static class IServiceCollectionValidationExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Brewery.Features.Shared.Mapping
+namespace Brewery.Web.Features.Shared.Mapping
 {
     public class SharedMappingProfile : Profile
     {

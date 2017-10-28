@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Autofac.Core;
 
-namespace Brewery.Setup.DI
+namespace Brewery.Web.Setup.DI
 {
     public class AccessRightInvariantPropertySelector : DefaultPropertySelector
     {

@@ -1,10 +1,10 @@
 ﻿using Brewery.Web.Features.Shared.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Brewery.Web.Features.Bewery.Controllers
+namespace Brewery.Web.Features.HomePage.Controllers
 {
-    [Area(nameof(Bewery))]
-    public class BeerController : BaseController
+    [Area(nameof(HomePage))]
+    public class HomePageController : BaseController
     {
         public IActionResult Index() => View();
     }

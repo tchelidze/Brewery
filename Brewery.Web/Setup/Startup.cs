@@ -1,16 +1,16 @@
 ﻿using Asp.Net.Core.Screaming;
 using AspNetCore.IServiceCollection.AddIUrlHelper;
 using Autofac;
-using Beelisaurus.Web.Startup.Factories;
-using Brewery.Setup.DI;
-using Brewery.Setup.IServiceCollectionExtensions;
-using Brewery.Setup.Mvc;
+using Brewery.Web.Setup.Configuration;
+using Brewery.Web.Setup.DI;
+using Brewery.Web.Setup.Mapping;
+using Brewery.Web.Setup.Mvc;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Brewery.Setup
+namespace Brewery.Web.Setup
 {
     public class Startup
     {

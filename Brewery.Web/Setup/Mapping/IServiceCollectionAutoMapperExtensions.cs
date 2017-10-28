@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Brewery.Features.Shared.Mapping;
+using Brewery.Web.Features.Shared.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Brewery.Setup.IServiceCollectionExtensions
+namespace Brewery.Web.Setup.Mapping
 {
     internal static class IServiceCollectionAutoMapperExtensions
     {

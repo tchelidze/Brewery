@@ -1,7 +1,7 @@
-﻿using Brewery.Setup.Validation;
+﻿using Brewery.Web.Setup.Validation;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Brewery.Setup.Mvc
+namespace Brewery.Web.Setup.Mvc
 {
     internal static class IServiceCollectionMvcExtensions
     {
