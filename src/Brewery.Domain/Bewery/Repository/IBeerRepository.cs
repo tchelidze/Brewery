@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Brewery.Domain.Bewery.Entities;
+﻿using System.Threading.Tasks;
+using Brewery.Domain.Shared.Repository.Dto;
+using Brewery.Domain.Shared.Repository.Exceptions;
 
 namespace Brewery.Domain.Bewery.Repository
 {
     public interface IBeerRepository
     {
-        Task<IReadOnlyList<Beer>> List();
+        /// <exception cref="UnableToRetrieveDataException">
+        ///     When data retrievation fails for unknown reasons.
+        ///     See inner exception for details
+        /// </exception>
+        Task<BeerList.Response> List(BeerList.Request request);
     }
 }

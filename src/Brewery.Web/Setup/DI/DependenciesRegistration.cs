@@ -2,7 +2,9 @@
 using Brewery.Application.Shared.Services.Concrete;
 using Brewery.Domain.Shared.Service.Concrete;
 using Brewery.Infrastructure.Bewery.Repository;
+using Brewery.Infrastructure.BeweryApi;
 using Brewery.Web.Features.Shared.Controllers;
+using Brewery.Web.Setup.DI.Extensions;
 
 namespace Brewery.Web.Setup.DI
 {
@@ -22,7 +24,7 @@ namespace Brewery.Web.Setup.DI
                 .RegisterAssemblyTypes(typeof(BaseController).Assembly)
                 .AsImplementedInterfaces()
                 .AsSelf()
-                .PropertiesAutowired(new AccessRightInvariantPropertySelector(true));
+                .PropertiesAutowiredWithAccessRightInvariantPropertySelector();
 
             return builder;
         }
@@ -33,7 +35,7 @@ namespace Brewery.Web.Setup.DI
                 .RegisterAssemblyTypes(typeof(BaseDomainService).Assembly)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope()
-                .PropertiesAutowired(new AccessRightInvariantPropertySelector(true));
+                .PropertiesAutowiredWithAccessRightInvariantPropertySelector();
 
             return builder;
         }
@@ -44,7 +46,7 @@ namespace Brewery.Web.Setup.DI
                 .RegisterAssemblyTypes(typeof(BaseAppService).Assembly)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope()
-                .PropertiesAutowired(new AccessRightInvariantPropertySelector(true));
+                .PropertiesAutowiredWithAccessRightInvariantPropertySelector();
 
             return builder;
         }
@@ -55,7 +57,13 @@ namespace Brewery.Web.Setup.DI
                 .RegisterAssemblyTypes(typeof(BeerRepository).Assembly)
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope()
-                .PropertiesAutowired(new AccessRightInvariantPropertySelector(true));
+                .PropertiesAutowiredWithAccessRightInvariantPropertySelector();
+
+            builder
+                .RegisterAssemblyTypes(typeof(BeweryApiClient).Assembly)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .PropertiesAutowiredWithAccessRightInvariantPropertySelector();
 
             return builder;
         }

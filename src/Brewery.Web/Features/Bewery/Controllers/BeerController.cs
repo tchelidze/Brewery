@@ -17,7 +17,10 @@ namespace Brewery.Web.Features.Bewery.Controllers
 
         public virtual async Task<IActionResult> Index()
         {
-            await _beerAppService.ListBeerAsync(new ListBeer.Request());
+            await _beerAppService.ListBeerAsync(new ListBeer.Request()
+            {
+                PageNumber = 1
+            });
             return View();
         }
     }

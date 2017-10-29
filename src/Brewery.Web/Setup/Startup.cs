@@ -27,6 +27,7 @@ namespace Brewery.Web.Setup
                 .AddSession()
                 .ConfigureMvc()
                 .AddAutoMapperProfiles()
+                .ConfigureOptions(Configuration)
                 .AddUrlHelper();
 
         public void Configure(
