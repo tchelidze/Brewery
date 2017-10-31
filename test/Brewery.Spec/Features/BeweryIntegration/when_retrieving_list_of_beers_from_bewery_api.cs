@@ -27,20 +27,20 @@ namespace Brewery.Spec.Features.BeweryIntegration
         static readonly Mock<IRestRequestWrapper> RestRequestWrapper = new Mock<IRestRequestWrapper>();
         static BeweryApiClient _sut;
 
-        Because _context = () => { _sut.Beers(new Beers.Request()).Wait(); };
+        Because _context = () => { _sut.Beers(new BeersEndpoint.Request()).Wait(); };
 
         Establish _establish = () =>
         {
             BeweryApiOptionsMock.SetupGet(it => it.Value).Returns(BeweryApiOptions);
-            var succeededRestResponse = new Mock<IRestResponse<Beers.Response>>();
+            var succeededRestResponse = new Mock<IRestResponse<BeersEndpoint.Response>>();
             succeededRestResponse.SetupGet(it => it.StatusCode).Returns(HttpStatusCode.OK);
 
             RestRequestWrapper
-                .Setup(it => it.ExecuteAsync<Beers.Response>(Moq.It.IsAny<IRestClient>(), Moq.It.IsAny<IRestRequest>()))
+                .Setup(it => it.ExecuteAsync<BeersEndpoint.Response>(Moq.It.IsAny<IRestClient>(), Moq.It.IsAny<IRestRequest>()))
                 .Returns(Task.FromResult(succeededRestResponse.Object));
             _sut = new BeweryApiClient(BeweryApiOptionsMock.Object, BeweryApiRestClientFactoryMock.Object, RestRequestWrapper.Object);
         };
 
-        It shouldPassCorrectApiKeyToRequest = () => { RestRequestWrapper.Verify(it => it.ExecuteAsync<Beers.Response>(Moq.It.IsAny<IRestClient>(), Moq.It.Is<IRestRequest>(ti => (string)ti.Parameters.First(tti => tti.Name == "key").Value == BeweryApiOptions.ApiKeyValue))); };
+        It shouldPassCorrectApiKeyToRequest = () => { RestRequestWrapper.Verify(it => it.ExecuteAsync<BeersEndpoint.Response>(Moq.It.IsAny<IRestClient>(), Moq.It.Is<IRestRequest>(ti => (string)ti.Parameters.First(tti => tti.Name == "key").Value == BeweryApiOptions.ApiKeyValue))); };
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Brewery.Infrastructure.BeweryApi.Endpoints;
+﻿using Brewery.Infrastructure.BeweryApi.Endpoints;
 using Brewery.Infrastructure.BeweryApi.Exceptions;
 using Brewery.Infrastructure.BeweryApi.Options;
 using Brewery.Infrastructure.BeweryApi.Specifications;
@@ -7,6 +6,7 @@ using Brewery.Infrastructure.BeweryApi.Wrappers;
 using Microsoft.Extensions.Options;
 using Restsharp.Get.AddObjectParameter.Extensions;
 using RestSharp;
+using System.Threading.Tasks;
 
 namespace Brewery.Infrastructure.BeweryApi
 {
@@ -27,8 +27,12 @@ namespace Brewery.Infrastructure.BeweryApi
         }
 
         /// <inheritdoc />
-        public async Task<Beers.Response> Beers(Beers.Request request)
-            => await InvokeBeweryApi<Beers.Request, Beers.Response>(request, "beers");
+        public async Task<BeerEndpoint.Response> Beer(BeerEndpoint.Request request)
+            => await InvokeBeweryApi<BeerEndpoint.Request, BeerEndpoint.Response>(request, "beer/{beerId}");
+
+        /// <inheritdoc />
+        public async Task<BeersEndpoint.Response> Beers(BeersEndpoint.Request request)
+            => await InvokeBeweryApi<BeersEndpoint.Request, BeersEndpoint.Response>(request, "beers");
 
         /// <summary>
         ///     Invokes Bewery api.

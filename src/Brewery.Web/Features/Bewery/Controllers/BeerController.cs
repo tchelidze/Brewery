@@ -19,12 +19,13 @@ namespace Brewery.Web.Features.Bewery.Controllers
             => _beerAppService = beerAppService;
 
         [HttpGet]
+        [Route("/list")]
         public virtual async Task<IActionResult> List(
-            [FromQuery]int page,
-            [FromQuery]string[] beerIds,
-            [FromQuery]string beerName,
-            [FromQuery]string order,
-            [FromQuery]int? year)
+            [FromQuery] int page,
+            [FromQuery] string[] beerIds,
+            [FromQuery] string beerName,
+            [FromQuery] string order,
+            [FromQuery] int? year)
             => (await _beerAppService.ListBeerAsync(new ListBeer.Request
             {
                 PageNumber = page,
@@ -35,6 +36,16 @@ namespace Brewery.Web.Features.Bewery.Controllers
             }))
                 .OnBoth(Json);
 
-        //        public virtual async Task<JsonResult> Get()
+        [HttpGet]
+        [Route("/details")]
+        public virtual async Task<IActionResult> Details(
+            [FromQuery] string beerId,
+            [FromQuery] bool? withBeweries)
+            => (await _beerAppService.BeerDetails(new BeerDetails.Request
+            {
+                BeerId = beerId,
+                WithBreweries = withBeweries
+            }))
+                .OnBoth(Json);
     }
 }

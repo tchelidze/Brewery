@@ -8,7 +8,7 @@ namespace Brewery.Infrastructure.Bewery.Repository.Mapping
     {
         public BeweryRepositoryMappingProfile()
         {
-            var beerListRequestToBeersRequest = CreateMap<BeerList.Request, Beers.Request>();
+            var beerListRequestToBeersRequest = CreateMap<BeerList.Request, BeersEndpoint.Request>();
             beerListRequestToBeersRequest.ForMember(it => it.BeerIds, opts => opts.MapFrom(it => it.BeerIds == null ? null : it.BeerIds.ToArray()));
         }
     }

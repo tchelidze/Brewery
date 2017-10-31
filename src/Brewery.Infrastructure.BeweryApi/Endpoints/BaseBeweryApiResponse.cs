@@ -16,10 +16,6 @@ namespace Brewery.Infrastructure.BeweryApi.Endpoints
         {
             [DeserializeAs(Name = "status")]
             public string Status { get; set; }
-
-
-            [DeserializeAs(Name = "errorMessage")]
-            public string ErrorMessage { get; set; }
         }
     }
 }

@@ -7,10 +7,15 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.0.2" />
+    <PackageReference Include="Kodefabrikken.Specification" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Shared\Service\Abstract\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brewery.CrossEdge\Brewery.CrossEdge.csproj" />
   </ItemGroup>
 
 </Project>

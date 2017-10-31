@@ -55,6 +55,13 @@ namespace Brewery.Web.Features.Bewery.Controllers
             return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.List);
         }
 
+        [NonAction]
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public virtual IActionResult Details()
+        {
+            return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Details);
+        }
+
         [GeneratedCode("R4Mvc", "1.0")]
         public BeerController Actions => MVC.Bewery.Beer;
         [GeneratedCode("R4Mvc", "1.0")]
@@ -71,12 +78,14 @@ namespace Brewery.Web.Features.Bewery.Controllers
         public class ActionNamesClass
         {
             public readonly string List = "List";
+            public readonly string Details = "Details";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string List = "List";
+            public const string Details = "Details";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -116,6 +125,18 @@ namespace Brewery.Web.Features.Bewery.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "order", order);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "year", year);
             ListOverride(callInfo, page, beerIds, beerName, order, year);
+            return Task.FromResult(callInfo as Microsoft.AspNetCore.Mvc.IActionResult);
+        }
+
+        [NonAction]
+        partial void DetailsOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo, string beerId, bool? withBeweries);
+        [NonAction]
+        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> Details(string beerId, bool? withBeweries)
+        {
+            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Details);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "beerId", beerId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "withBeweries", withBeweries);
+            DetailsOverride(callInfo, beerId, withBeweries);
             return Task.FromResult(callInfo as Microsoft.AspNetCore.Mvc.IActionResult);
         }
     }
