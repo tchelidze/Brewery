@@ -7,6 +7,6 @@ namespace Brewery.Application.Bewery.Services.Abstract
     public interface IBeerAppService
     {
         Task<Result<ListBeer.Response>> ListBeerAsync(ListBeer.Request request);
-        Task<Result<BeerDetails.Response>> BeerDetails(BeerDetails.Request request);
+        Task<Result<BeerDetails.Response>> BeerDetailsAsync(BeerDetails.Request request);
     }
 }

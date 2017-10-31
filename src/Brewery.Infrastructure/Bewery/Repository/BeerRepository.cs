@@ -27,9 +27,9 @@ namespace Brewery.Infrastructure.Bewery.Repository
         }
 
         /// <inheritdoc />
-        public async Task<BeerList.Response> List(BeerList.Request request)
+        public async Task<BeerList.Response> ListAsync(BeerList.Request request)
         {
-            var listBeersApiResponse = await _beweryApiClient.Beers(_mapper.Map<BeersEndpoint.Request>(request));
+            var listBeersApiResponse = await _beweryApiClient.BeersAsync(_mapper.Map<BeersEndpoint.Request>(request));
             if (new BreweryApiFailedSpecification().IsSatisfiedBy(listBeersApiResponse))
                 throw new UnableToRetrieveDataException(new FailedBeweryApiResponseException(listBeersApiResponse));
 
@@ -37,9 +37,9 @@ namespace Brewery.Infrastructure.Bewery.Repository
             return beerListResponse;
         }
 
-        public async Task<Beer> Get(GetBeer.Request request)
+        public async Task<Beer> GetAsync(GetBeer.Request request)
         {
-            var beersApiResponse = await _beweryApiClient.Beer(_mapper.Map<BeerEndpoint.Request>(request));
+            var beersApiResponse = await _beweryApiClient.BeerAsync(_mapper.Map<BeerEndpoint.Request>(request));
             if (new BreweryApiFailedSpecification().IsSatisfiedBy(beersApiResponse))
                 throw new UnableToRetrieveDataException(new FailedBeweryApiResponseException(beersApiResponse));
             var beer = _mapper.Map<Beer>(beersApiResponse.Beer);

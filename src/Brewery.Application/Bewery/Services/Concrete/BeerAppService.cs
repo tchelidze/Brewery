@@ -23,7 +23,7 @@ namespace Brewery.Application.Bewery.Services.Concrete
         {
             try
             {
-                var beerList = await _beerRepository.List(
+                var beerList = await _beerRepository.ListAsync(
                     new BeerList.Request.Builder()
                         .Page(request.PageNumber)
                         .OnlyWithOfIds(request.BeerIds)
@@ -41,11 +41,11 @@ namespace Brewery.Application.Bewery.Services.Concrete
             }
         }
 
-        public async Task<Result<BeerDetails.Response>> BeerDetails(BeerDetails.Request request)
+        public async Task<Result<BeerDetails.Response>> BeerDetailsAsync(BeerDetails.Request request)
         {
             try
             {
-                var beer = await _beerRepository.Get(
+                var beer = await _beerRepository.GetAsync(
                     new GetBeer.Request.Builder()
                         .Id(request.BeerId)
                         .Beweries(request.WithBreweries)

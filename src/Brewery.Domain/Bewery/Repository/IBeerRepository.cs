@@ -11,8 +11,8 @@ namespace Brewery.Domain.Bewery.Repository
         ///     When data retrievation fails for unknown reasons.
         ///     See inner exception for details
         /// </exception>
-        Task<BeerList.Response> List(BeerList.Request request);
+        Task<BeerList.Response> ListAsync(BeerList.Request request);
 
-        Task<Beer> Get(GetBeer.Request request);
+        Task<Beer> GetAsync(GetBeer.Request request);
     }
 }

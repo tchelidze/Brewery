@@ -6,9 +6,9 @@ namespace Brewery.Infrastructure.BeweryApi
     public interface IBeweryApiClient
     {
         /// <inheritdoc cref="IBeweryApiClient.InvokeBeweryApi{TRequest,TResponse}" />
-        Task<BeersEndpoint.Response> Beers(BeersEndpoint.Request request);
+        Task<BeersEndpoint.Response> BeersAsync(BeersEndpoint.Request request);
 
         /// <inheritdoc cref="IBeweryApiClient.InvokeBeweryApi{TRequest,TResponse}" />
-        Task<BeerEndpoint.Response> Beer(BeerEndpoint.Request request);
+        Task<BeerEndpoint.Response> BeerAsync(BeerEndpoint.Request request);
     }
 }

@@ -41,7 +41,7 @@ namespace Brewery.Web.Features.Bewery.Controllers
         public virtual async Task<IActionResult> Details(
             [FromQuery] string beerId,
             [FromQuery] bool? withBeweries)
-            => (await _beerAppService.BeerDetails(new BeerDetails.Request
+            => (await _beerAppService.BeerDetailsAsync(new BeerDetails.Request
             {
                 BeerId = beerId,
                 WithBreweries = withBeweries

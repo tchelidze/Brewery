@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\Brewery.Application\Brewery.Application.csproj" />
     <ProjectReference Include="..\..\src\Brewery.Infrastructure.BeweryApi\Brewery.Infrastructure.BeweryApi.csproj" />
+    <ProjectReference Include="..\..\src\Brewery.Infrastructure\Brewery.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

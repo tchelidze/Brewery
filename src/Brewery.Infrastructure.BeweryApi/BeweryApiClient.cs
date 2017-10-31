@@ -27,11 +27,11 @@ namespace Brewery.Infrastructure.BeweryApi
         }
 
         /// <inheritdoc />
-        public async Task<BeerEndpoint.Response> Beer(BeerEndpoint.Request request)
+        public async Task<BeerEndpoint.Response> BeerAsync(BeerEndpoint.Request request)
             => await InvokeBeweryApi<BeerEndpoint.Request, BeerEndpoint.Response>(request, "beer/{beerId}");
 
         /// <inheritdoc />
-        public async Task<BeersEndpoint.Response> Beers(BeersEndpoint.Request request)
+        public async Task<BeersEndpoint.Response> BeersAsync(BeersEndpoint.Request request)
             => await InvokeBeweryApi<BeersEndpoint.Request, BeersEndpoint.Response>(request, "beers");
 
         /// <summary>
