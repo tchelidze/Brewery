@@ -48,6 +48,13 @@ namespace Brewery.Web.Features.Bewery.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
+        public virtual IActionResult List()
+        {
+            return new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.List);
+        }
+
         [GeneratedCode("R4Mvc", "1.0")]
         public BeerController Actions => MVC.Bewery.Beer;
         [GeneratedCode("R4Mvc", "1.0")]
@@ -63,13 +70,13 @@ namespace Brewery.Web.Features.Bewery.Controllers
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
+            public readonly string List = "List";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
+            public const string List = "List";
         }
 
         [GeneratedCode("R4Mvc", "1.0"), DebuggerNonUserCode]
@@ -98,12 +105,17 @@ namespace Brewery.Web.Features.Bewery.Controllers
         }
 
         [NonAction]
-        partial void IndexOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo);
+        partial void ListOverride(R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult callInfo, int page, string[] beerIds, string beerName, string order, int? year);
         [NonAction]
-        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> Index()
+        public override System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult> List(int page, string[] beerIds, string beerName, string order, int? year)
         {
-            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            var callInfo = new R4Mvc_Microsoft_AspNetCore_Mvc_ActionResult(Area, Name, ActionNames.List);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "page", page);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "beerIds", beerIds);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "beerName", beerName);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "order", order);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "year", year);
+            ListOverride(callInfo, page, beerIds, beerName, order, year);
             return Task.FromResult(callInfo as Microsoft.AspNetCore.Mvc.IActionResult);
         }
     }

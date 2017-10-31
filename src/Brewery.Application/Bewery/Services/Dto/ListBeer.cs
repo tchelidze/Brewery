@@ -29,16 +29,9 @@ namespace Brewery.Application.Bewery.Services.Dto
 
                 public string Description { get; set; }
 
-                public BeerItemCategory Category { get; set; }
+                public string Name { get; set; }
 
-                public class BeerItemCategory
-                {
-                    public long Id { get; set; }
-
-                    public string CreateDate { get; set; }
-
-                    public string Name { get; set; }
-                }
+                public int Year { get; set; }
             }
         }
     }

@@ -261,4 +261,4 @@ __pycache__/
 *.pyc
 
 # Logs 
-src/Beelisaurus/Logs/
+src/Brewery.Web/Logs/

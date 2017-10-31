@@ -5,4 +5,8 @@
     <Configurations>Debug;Release;Staging</Configurations>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="1.7.1" />
+  </ItemGroup>
+
 </Project>

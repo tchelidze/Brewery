@@ -1,6 +1,7 @@
 ﻿using Asp.Net.Core.Screaming;
 using AspNetCore.IServiceCollection.AddIUrlHelper;
 using Autofac;
+using Brewery.Web.Setup.Api;
 using Brewery.Web.Setup.Configuration;
 using Brewery.Web.Setup.DI;
 using Brewery.Web.Setup.Mapping;
@@ -28,7 +29,8 @@ namespace Brewery.Web.Setup
                 .ConfigureMvc()
                 .AddAutoMapperProfiles()
                 .ConfigureOptions(Configuration)
-                .AddUrlHelper();
+                .AddUrlHelper()
+                .AddConfiguredSwagger();
 
         public void Configure(
             IApplicationBuilder app,
@@ -44,6 +46,7 @@ namespace Brewery.Web.Setup
 #endif
                 .UseStaticFiles()
                 .UseSession()
-                .UserConfiguredMvc();
+                .UserConfiguredMvc()
+                .UseConfiguredSwagger();
     }
 }

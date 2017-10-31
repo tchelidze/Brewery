@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Brewery.Infrastructure.BeweryApi.Endpoints.Exceptions;
+﻿using Brewery.Infrastructure.BeweryApi.Endpoints.Exceptions;
 using Brewery.Infrastructure.BeweryApi.Endpoints.PrameterFormatters;
 using Brewery.Infrastructure.BeweryApi.Endpoints.Specifications;
 using Restsharp.Get.AddObjectParameter.Attributes;
 using RestSharp;
 using RestSharp.Deserializers;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Brewery.Infrastructure.BeweryApi.Endpoints
 {
@@ -28,6 +28,7 @@ namespace Brewery.Infrastructure.BeweryApi.Endpoints
             /// </summary>
             [ParameterName("ids")]
             [ParameterType(ParameterType.QueryString)]
+            [ParameterFormatter(typeof(BeweryApiCollectionParameterFormatter))]
             public List<string> BeerIds
             {
                 get => _beerIds;

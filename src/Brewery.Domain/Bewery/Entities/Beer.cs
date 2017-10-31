@@ -8,6 +8,8 @@ namespace Brewery.Domain.Bewery.Entities
 
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
         public string CreateDate { get; set; }
 
         public string Abv { get; set; }
